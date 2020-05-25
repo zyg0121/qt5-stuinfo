@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ModifyWidget</class>
+ <widget class="QDialog" name="ModifyWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>574</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>50</y>
+     <width>402</width>
+     <height>389</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="6" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>修改信息请将需修改的信息修改后点击修改即可</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="namelabel">
+      <property name="text">
+       <string>姓名:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="namelineEdit"/>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="agelabel">
+      <property name="text">
+       <string>年龄:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="agelineEdit"/>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="genlabel">
+      <property name="text">
+       <string>性别:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>男</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>女</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="tellabel">
+      <property name="text">
+       <string>电话:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLineEdit" name="tellineEdit"/>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="birllabel">
+      <property name="text">
+       <string>生日:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="birlineEdit">
+      <property name="placeholderText">
+       <string>YYYYMMDD</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="addresslabel">
+      <property name="text">
+       <string>地址:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QLineEdit" name="addresslineEdit"/>
+    </item>
+    <item row="13" column="0">
+     <widget class="QLabel" name="gradelabel">
+      <property name="text">
+       <string>成绩:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QLineEdit" name="gradelineEdit"/>
+    </item>
+    <item row="14" column="1">
+     <widget class="QPushButton" name="modifypushButton">
+      <property name="text">
+       <string>修改</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1">
+     <widget class="QPushButton" name="returnButton">
+      <property name="text">
+       <string>主菜单</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="idlineEdit">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>请输入学号</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="idlabel">
+      <property name="text">
+       <string>学号:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>根据学号信息修改学生信息</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="searchButton">
+      <property name="text">
+       <string>获取修改前信息</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
