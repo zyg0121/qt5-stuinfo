@@ -24,6 +24,7 @@ adminwidget::adminwidget(QWidget *parent) :
 
 	setLayout(stackLayout);
 
+    //connect把信号和槽进行关联
 	connect(menuwidget, &MenuWidget::display, stackLayout, &QStackedLayout::setCurrentIndex);
 	connect(addstudentwidget, &AddStudentWidget::display, stackLayout, &QStackedLayout::setCurrentIndex);
 	connect(findWidget, &FindWidget::display, stackLayout, &QStackedLayout::setCurrentIndex);

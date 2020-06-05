@@ -14,8 +14,7 @@ class stuinfo {
 		QString stu_bir;//生日
 		double stu_score;//学生成绩（0-100）
 	public:
-		stuinfo();
-		//inp>>name>>number>>age>>gender>>tel>>bir>>address>>score;
+        stuinfo();//构造函数
 		stuinfo(QString name,long long number,QString age,QString gender,long long tel,QString bir,QString address,double score);
 		//获取
 		QString getname() ;

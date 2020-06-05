@@ -18,11 +18,11 @@ void DelWidget::on_deletepushButton_clicked() {
 		return;
 	}
 	NODE pHead;
-	pHead.InputStudent();
-	long long number = ui->idlineEdit->text().toLongLong();
-	pHead.DeleteStudent(number);
-	pHead.OutputStudent();
-	ui->idlineEdit->clear();
+    pHead.InputStudent();//从文件读入学生信息
+    long long number = ui->idlineEdit->text().toLongLong();//从文本框获取信息
+    pHead.DeleteStudent(number);//在链表中删除学生信息
+    pHead.OutputStudent();//把链表中的学生信息写入文件
+    ui->idlineEdit->clear();//清空文本框
 }
 
 void DelWidget::on_returnButton_clicked() {

@@ -18,6 +18,7 @@ stuwidget::stuwidget(QWidget *parent) :
 
 	setLayout(stackLayout);
 
+    //connect把信号和槽进行关联
 	connect(stuMenuwidget, &stumenuwidget::display, stackLayout, &QStackedLayout::setCurrentIndex);
 	connect(findWidget, &FindWidget::display, stackLayout, &QStackedLayout::setCurrentIndex);
 	connect(sortwidget, &SortWidget::display, stackLayout, &QStackedLayout::setCurrentIndex);

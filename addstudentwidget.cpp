@@ -16,7 +16,8 @@ void AddStudentWidget::on_returnButton_clicked() {
 }
 
 void AddStudentWidget::on_addButton_clicked() {
-	ui->namelineEdit->setFocus();
+    ui->idlineEdit->setFocus();//设置指针指向学号
+    //从文本框获取信息
 	QString name = ui->namelineEdit->text().trimmed();
 	long long number = ui->idlineEdit->text().toLongLong();
 	QString age = ui->agelineEdit->text().trimmed();
@@ -26,7 +27,9 @@ void AddStudentWidget::on_addButton_clicked() {
 	QString address = ui->addresslineEdit->text().trimmed();
 	double grade = ui->gradelineEdit->text().toDouble();
 
-	if(ui->namelineEdit->text()=="" || ui->idlineEdit->text()=="" || ui->agelineEdit->text()=="" || ui->tellineEdit->text()=="" || ui->birlineEdit->text()=="" || ui->addresslineEdit->text()=="" || ui->gradelineEdit->text()=="") {
+    if(ui->namelineEdit->text()=="" || ui->idlineEdit->text()=="" || ui->agelineEdit->text()==""
+            || ui->tellineEdit->text()=="" || ui->birlineEdit->text()=="" ||
+            ui->addresslineEdit->text()=="" || ui->gradelineEdit->text()=="") {//判断是否有空项目
 		QMessageBox::about(NULL, "反馈", "存在空项");
 		return;
 	}
@@ -34,16 +37,17 @@ void AddStudentWidget::on_addButton_clicked() {
 		QMessageBox::about(NULL, "反馈", "分数需在0~100区间");
 		return;
 	}
-	QFile file("stuinfo.txt");
-	file.open(QIODevice::WriteOnly|QIODevice::Text|QIODevice::Append);
+    QFile file("stuinfo.txt");//文件指针
+    file.open(QIODevice::WriteOnly|QIODevice::Text|QIODevice::Append);//打开文件
 	if(!file.isOpen()) {
 		QMessageBox::about(NULL, "反馈", "数据文件打开失败");
 		return;
 	}
-	QTextStream out(&file);
+    QTextStream out(&file);//写入
 	out<<name<<" "<<number<<" "<<age<<" "<<gender<<" "<<tel<<" "<<bir<<" "<<address<<" "<<grade<<"\n";
-	file.close();
+    file.close();//关闭
 	QMessageBox::about(NULL,"反馈","成功保存");
+    //清楚文本框信息
 	ui->namelineEdit->clear();
 	ui->idlineEdit->clear();
 	ui->agelineEdit->clear();

@@ -23,10 +23,10 @@ class MainWidget : public QDialog {
 		void on_stupushButton_clicked();
 
 	private:
-		Ui::MainWidget *ui;
+        Ui::MainWidget *ui;//主菜单界面
 
-		adminwidget *admin_ui;
-		stuwidget *stu_ui;
+        adminwidget *admin_ui;//管理员菜单界面
+        stuwidget *stu_ui;//学生菜单界面
 };
 
 #endif // MAINWIDGET_H

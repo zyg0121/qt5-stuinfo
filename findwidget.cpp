@@ -20,7 +20,7 @@ void FindWidget::on_pushButton_clicked() {
 		QMessageBox::about(NULL, "反馈", "学号不能为空");
 		return;
 	}
-	NODE pHead;
+    NODE pHead;//创建链表
 	QString name;//姓名
 	long long number=ui->idlineEdit->text().toLongLong();//学号
 	QString age;//年龄
@@ -29,12 +29,13 @@ void FindWidget::on_pushButton_clicked() {
 	long long tel; //电话号码 1XXXXXXXXXX
 	QString bir;//生日
 	double score;//学生成绩（0-100）
-	pHead.InputStudent();
-	bool pd = pHead.SearchStudent(name,number,age,gender,tel,bir,address,score);
+    pHead.InputStudent();//从文件读入学生信息
+    bool pd = pHead.SearchStudent(name,number,age,gender,tel,bir,address,score);//在链表中查找学生信息
 	if(pd==false) {
 		QMessageBox::about(NULL,"反馈","查无此人!");
 		return;
 	}
+    //将获取到的信息写入Qlabel上
 	ui->shownamelabel->setText(name);
 	ui->showagelabel->setText(age);
 	ui->showgenlabel->setText(gender);

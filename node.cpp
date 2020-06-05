@@ -60,7 +60,7 @@ void Node::DeleteStudent(long long number) {
 	p = pHead->pNext;
 	if (number == p->st.getnumber()) {
 		pHead->pNext = pHead->pNext->pNext;
-		delete[]pHead->pNext->pNext;
+        delete[]pHead->pNext->pNext;//删除
 		QMessageBox::about(NULL,"反馈","已成功删除该学生信息!");
 	} else {
 		be = bp = p;
@@ -86,7 +86,7 @@ void Node::OutputStudent() {
 	}
 	QTextStream out(&file);
 	PNODE p = pHead->pNext;
-	for(; p; p=p->pNext) {
+    for(; p; p=p->pNext) {//输出
 		if(p->st.getname()=="") break;
 		out<<p->st.getname()<<" "<<p->st.getnumber()<<" "<<p->st.getage()<<" "<<p->st.getgender()<<" "<<p->st.gettel()<<" "<<p->st.getbir()<<" "<<p->st.getaddress()<<" "<<p->st.getscore()<<"\n";
 	}
@@ -120,7 +120,7 @@ void Node::ChangeStudent(QString name,long long number,QString age,QString gende
 bool Node::SearchStudent(QString &name,long long number,QString &age,QString &gender,long long &tel,QString &bir,QString &address,double &score) {
 	PNODE p = pHead->pNext;
 	bool flag = false;
-	for(; p; p = p->pNext) {
+    for(; p; p = p->pNext) {//循环查找
 		if(number==p->st.getnumber()) {
 			flag = true;
 			name = p->st.getname();
@@ -134,7 +134,7 @@ bool Node::SearchStudent(QString &name,long long number,QString &age,QString &ge
 		}
 	}
 	if(flag == false) {
-		return false;
+        return false;//没有找到
 	}
-	return true;
+    return true;//找到
 }

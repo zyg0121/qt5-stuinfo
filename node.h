@@ -8,11 +8,11 @@ class Node
 {
 public:
     Node();
-    void InputStudent();
-    void DeleteStudent(long long number);
-    void OutputStudent();
-    void ChangeStudent(QString name,long long number,QString age,QString gender,long long tel,QString bir,QString address,double score);
-    bool SearchStudent(QString &name,long long number,QString &age,QString &gender,long long &tel,QString &bir,QString &address,double &score);
+    void InputStudent();//输入学生信息
+    void DeleteStudent(long long number);//删除学生信息
+    void OutputStudent();//输出学生信息
+    void ChangeStudent(QString name,long long number,QString age,QString gender,long long tel,QString bir,QString address,double score);//修改学生信息
+    bool SearchStudent(QString &name,long long number,QString &age,QString &gender,long long &tel,QString &bir,QString &address,double &score);//查找学生信息
 
 private:
         stuinfo st;//数据域

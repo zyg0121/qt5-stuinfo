@@ -21,20 +21,20 @@ bool getStuInfo(QVector<stuinfo> &allStuInfo) {
 		QString bir;//生日
 		double score;//学生成绩（0-100）
 		inp>>name>>number>>age>>gender>>tel>>bir>>address>>score;
-		allStuInfo.push_back(stuinfo(name,number,age,gender,tel,bir,address,score));
+        allStuInfo.push_back(stuinfo(name,number,age,gender,tel,bir,address,score));//压入动态数组中
 	}
-	allStuInfo.pop_back();
+    allStuInfo.pop_back();//把空的剔除
 	file.close();
 	return true;
 }
 
 
 bool cmp_number(stuinfo a,stuinfo b) {
-	return a.getnumber() < b.getnumber();
+    return a.getnumber() < b.getnumber();//按学号
 }
 
 bool cmp_score(stuinfo a,stuinfo b) {
-	return a.getscore() > b.getscore();
+    return a.getscore() > b.getscore();//按成绩
 }
 
 
@@ -42,11 +42,10 @@ SortWidget::SortWidget(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::SortWidget) {
 	ui->setupUi(this);
-	sortButtonGroup = new QButtonGroup;
+    sortButtonGroup = new QButtonGroup;//设置输出学生信息界面
 	sortButtonGroup->addButton(ui->idradioButton,0);
 	sortButtonGroup->addButton(ui->graderadioButton,1);
-	ui->idradioButton->setChecked(true);
-	//out<<name<<" "<<number<<" "<<age<<" "<<gender<<" "<<tel<<" "<<bir<<" "<<address<<" "<<grade<<"\n";
+    ui->idradioButton->setChecked(true);
 	ui->tableWidget->setColumnCount(8);
 	QStringList headerLabels;
 	headerLabels<<tr("姓名")<<tr("学号")<<tr("年龄")<<tr("性别")<<tr("电话")<<tr("生日")<<tr("地址")<<tr("成绩");
@@ -83,9 +82,9 @@ void SortWidget::on_sortpushButton_clicked() {
 		default:
 			break;
 	}
-	ui->tableWidget->setRowCount(allStuInfo.size());
+    ui->tableWidget->setRowCount(allStuInfo.size());//设置行数
 
-	for(int i = 0 ; i < allStuInfo.size() ; i++ ) {
+    for(int i = 0 ; i < allStuInfo.size() ; i++ ) {//输出
 		ui->tableWidget->setItem(i,0,new QTableWidgetItem(allStuInfo[i].getname()));
 		ui->tableWidget->setItem(i,1,new QTableWidgetItem(QString::number(allStuInfo[i].getnumber())));
 		ui->tableWidget->setItem(i,2,new QTableWidgetItem(allStuInfo[i].getage()));

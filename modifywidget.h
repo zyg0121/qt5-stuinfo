@@ -21,7 +21,7 @@ public:
     explicit ModifyWidget(QWidget *parent = nullptr);
     ~ModifyWidget();
 signals:
-    void display(int number);
+    void display(int number);//作为stackLayout切换页面的信号
 private slots:
     void on_returnButton_clicked();
 
